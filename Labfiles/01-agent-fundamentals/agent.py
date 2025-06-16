@@ -38,20 +38,20 @@ def main():
 
 
         # Upload the data file and create a CodeInterpreterTool
-        file = agent_client.files.upload_and_poll(
-            file_path=file_path, purpose=FilePurpose.AGENTS
-        )
-        print(f"Uploaded {file.filename}")
-
-        code_interpreter = CodeInterpreterTool(file_ids=[file.id])
+        # file = agent_client.files.upload_and_poll(
+        #     file_path=file_path, purpose=FilePurpose.AGENTS
+        # )
+        # print(f"Uploaded {file.filename}")
+        # file_ids=[file.id]
+        code_interpreter = CodeInterpreterTool()
 
 
 
         # Define an agent that uses the CodeInterpreterTool
         agent = agent_client.create_agent(
             model=model_deployment,
-            name="data-agent",
-            instructions="You are an AI agent that analyzes the data in the file that has been uploaded. If the user requests a chart, create it and save it as a .png file.",
+            name="Corp-Expance",
+            # instructions="You are an AI agent that analyzes the data in the file that has been uploaded. If the user requests a chart, create it and save it as a .png file.",
             tools=code_interpreter.definitions,
             tool_resources=code_interpreter.resources,
         )
