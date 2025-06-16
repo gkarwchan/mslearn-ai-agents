@@ -1,0 +1,12 @@
+name: venv-azure
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - azure-identity
+      - python-dotenv
+      - azure-ai-projects
+      - azure-ai-ml
