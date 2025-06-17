@@ -10,3 +10,4 @@ dependencies:
       - python-dotenv
       - azure-ai-projects
       - azure-ai-ml
+      - semantic-kernel[azure]
